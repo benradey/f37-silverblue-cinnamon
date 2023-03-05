@@ -1,0 +1,85 @@
+FROM ghcr.io/cgwalters/fedora-silverblue:37
+RUN rpm-ostree override remove \
+  adobe-source-code-pro-fonts \
+  evolution-data-server-langpacks \
+  evolution-data-server \
+  fprintd-pam \
+  gdm \
+  geoclue2 \
+  gnome-bluetooth \
+  gnome-browser-connector \
+  gnome-initial-setup \
+  gnome-control-center \
+  evince-djvu \
+  xdg-desktop-portal-gnome \
+  gnome-remote-desktop \
+  gnome-settings-daemon \
+  nautilus \
+  gnome-shell \
+  gnome-software-rpm-ostree \
+  mutter \
+  gnome-software \
+  gnome-terminal-nautilus \
+  gnome-user-docs \
+  gnome-session-wayland-session \
+  gnome-shell-extension-places-menu \
+  gnome-disk-utility \
+  gnome-shell-extension-window-list \
+  gnome-shell-extension-apps-menu \
+  gnome-shell-extension-background-logo \
+  gnome-user-share \
+  gnome-classic-session \
+  gnome-shell-extension-launch-new-instance \
+  gnome-session-xsession \
+  orca \
+  gnome-session \
+  gnome-shell-extension-common \
+  gvfs-afp \
+  gvfs-afc \
+  gvfs-fuse \
+  libproxy-duktape \
+  libsane-hpaio \
+  rygel \
+  systemd-oomd-defaults \
+  tracker-miners tracker \
+  xdg-desktop-portal \
+  xdg-desktop-portal-gtk \
+  yelp \
+&& rpm-ostree install \
+  abrt-desktop \
+  abrt-java-connector \
+  blueman \
+  cinnamon \
+  cinnamon-control-center \
+  cinnamon-screensaver \
+  eom \
+  firewall-config \
+  gnome-calculator \
+  gnome-screenshot \
+  imsettings-systemd \
+  metacity \
+  mpv \
+  nemo-fileroller \
+  nemo-image-converter \
+  nemo-preview \
+  NetworkManager-iodine-gnome \
+  NetworkManager-l2tp-gnome \
+  NetworkManager-libreswan-gnome \
+  paper-icon-theme \
+  powerline \
+  setroubleshoot \
+  shotwell \
+  simple-scan \
+  slick-greeter \
+  slick-greeter-cinnamon \
+  system-config-printer \
+  tmux \
+  tmux-powerline \
+  vim-powerline \
+  xawtv \
+  xed \
+  xfburn \
+  xreader \
+&& systemctl disable display-manager && systemctl enable lightdm
+
+
