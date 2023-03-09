@@ -1,4 +1,5 @@
 FROM ghcr.io/cgwalters/fedora-silverblue:37
+
 RUN rpm-ostree override remove \
   evince-djvu \
   evolution-data-server \
