@@ -1,85 +1,74 @@
 FROM ghcr.io/cgwalters/fedora-silverblue:37
 RUN rpm-ostree override remove \
-  adobe-source-code-pro-fonts \
-  evolution-data-server-langpacks \
+  evince-djvu \
   evolution-data-server \
+  evolution-data-server-langpacks \
   fprintd-pam \
   gdm \
   geoclue2 \
   gnome-bluetooth \
   gnome-browser-connector \
-  gnome-initial-setup \
+  gnome-classic-session \
   gnome-control-center \
-  evince-djvu \
-  xdg-desktop-portal-gnome \
-  gnome-remote-desktop \
-  gnome-settings-daemon \
-  nautilus \
-  gnome-shell \
-  gnome-software-rpm-ostree \
-  mutter \
-  gnome-software \
-  gnome-terminal-nautilus \
-  gnome-user-docs \
-  gnome-session-wayland-session \
-  gnome-shell-extension-places-menu \
   gnome-disk-utility \
-  gnome-shell-extension-window-list \
+  gnome-initial-setup \
+  gnome-remote-desktop \
+  gnome-session \
+  gnome-session-wayland-session \
+  gnome-session-xsession \
+  gnome-settings-daemon \
+  gnome-shell \
   gnome-shell-extension-apps-menu \
   gnome-shell-extension-background-logo \
-  gnome-user-share \
-  gnome-classic-session \
-  gnome-shell-extension-launch-new-instance \
-  gnome-session-xsession \
-  orca \
-  gnome-session \
   gnome-shell-extension-common \
-  gvfs-afp \
+  gnome-shell-extension-launch-new-instance \
+  gnome-shell-extension-places-menu \
+  gnome-shell-extension-window-list \
+  gnome-software \
+  gnome-software-rpm-ostree \
+  gnome-terminal-nautilus \
+  gnome-user-docs \
+  gnome-user-share \
   gvfs-afc \
+  gvfs-afp \
   gvfs-fuse \
   libproxy-duktape \
   libsane-hpaio \
+  mutter \
+  nautilus \
+  orca \
   rygel \
   systemd-oomd-defaults \
   tracker-miners tracker \
   xdg-desktop-portal \
+  xdg-desktop-portal-gnome \
   xdg-desktop-portal-gtk \
   yelp \
 && rpm-ostree install \
   abrt-desktop \
   abrt-java-connector \
   blueman \
+  cheese \
   cinnamon \
   cinnamon-control-center \
   cinnamon-screensaver \
   eom \
   firewall-config \
-  gnome-calculator \
-  gnome-screenshot \
   imsettings-systemd \
   metacity \
   mpv \
   nemo-fileroller \
   nemo-image-converter \
   nemo-preview \
-  NetworkManager-iodine-gnome \
-  NetworkManager-l2tp-gnome \
-  NetworkManager-libreswan-gnome \
   paper-icon-theme \
   powerline \
   setroubleshoot \
   shotwell \
   simple-scan \
-  slick-greeter \
-  slick-greeter-cinnamon \
   system-config-printer \
   tmux \
   tmux-powerline \
   vim-powerline \
   xawtv \
-  xed \
   xfburn \
-  xreader \
-&& systemctl disable display-manager && systemctl enable lightdm
-
-
+&& ostree container commit

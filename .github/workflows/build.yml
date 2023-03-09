@@ -7,14 +7,15 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: "benradey-f37-silverblue-cinnamon"
+  BASE_IMAGE_NAME: "f37-cinnamon-base"
+  LEGION_IMAGE_NAME: "f37-lenovo-legion"
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
   REGISTRY_USER: ${{ github.actor }}
   REGISTRY_PASSWORD: ${{ github.token }}
 
 
 jobs:
-  podman-build:
+  cinnamon-base-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -23,16 +24,42 @@ jobs:
       - name: Build container image
         uses: redhat-actions/buildah-build@v2
         with:
-          context: "."
-          containerfiles: Dockerfile
-          image: ${{ env.IMAGE_NAME }}
+          context: cinnamon-base
+          containerfiles: cinnamon-base/Dockerfile
+          image: ${{ env.BASE_IMAGE_NAME }}
           layers: false
           oci: true
 
       - name: Push to ghcr.io
         uses: redhat-actions/push-to-registry@v2.6
         with:
-          image: ${{ env.IMAGE_NAME }}
+          image: ${{ env.BASE_IMAGE_NAME }}
+          tags: "latest"
+          registry: ${{ env.IMAGE_REGISTRY }}
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+          extra-args: |
+            --disable-content-trust
+
+  lenovo-legion-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Build container image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          context: lenovo-legion
+          containerfiles: lenovo-legion/Dockerfile
+          image: ${{ env.LEGION_IMAGE_NAME }}
+          layers: false
+          oci: true
+
+      - name: Push to ghcr.io
+        uses: redhat-actions/push-to-registry@v2.6
+        with:
+          image: ${{ env.LEGION_IMAGE_NAME }}
           tags: "latest"
           registry: ${{ env.IMAGE_REGISTRY }}
           username: ${{ env.REGISTRY_USER }}
