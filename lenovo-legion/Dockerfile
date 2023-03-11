@@ -3,8 +3,11 @@ FROM ghcr.io/benradey/f37-cinnamon-base:latest
 RUN rpm-ostree install \
   akmod-nvidia \
   nvidia-vaapi-driver \
+  radeontop \
   solaar \
-  xorg-x11-drv-nvidia
+  xorg-x11-drv-nvidia \
+  xorg-x11-drv-nvidia-cuda \
+  xorg-x11-drv-nvidia-cuda-libs
 
 
 
