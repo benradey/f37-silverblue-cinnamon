@@ -1,5 +1,8 @@
 FROM ghcr.io/cgwalters/fedora-silverblue:37
 
+RUN rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+  https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
 RUN rpm-ostree override remove \
   evince-djvu \
   evolution-data-server \
@@ -54,6 +57,7 @@ RUN rpm-ostree override remove \
   cinnamon-control-center \
   cinnamon-screensaver \
   eom \
+  ffmpeg \
   firewall-config \
   imsettings-systemd \
   metacity \
