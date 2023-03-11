@@ -72,5 +72,5 @@ RUN rpm-ostree override remove \
   vim-powerline \
   xawtv \
   xfburn \
-&& rm -rf /var/* \
+&& rm -rf /var \
 && ostree container commit
