@@ -38,6 +38,7 @@ RUN rpm-ostree override remove \
   gvfs-fuse \
   libproxy-duktape \
   libsane-hpaio \
+  mesa-va-drivers \
   mutter \
   nautilus \
   orca \
@@ -60,6 +61,7 @@ RUN rpm-ostree override remove \
   ffmpeg \
   firewall-config \
   imsettings-systemd \
+  mesa-va-drivers-freeworld \
   metacity \
   mpv \
   nemo-fileroller \
