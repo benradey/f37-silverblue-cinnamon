@@ -2,6 +2,7 @@ FROM ghcr.io/benradey/f37-cinnamon-base:latest
 
 RUN rpm-ostree install \
   akmod-nvidia \
+  egl-utils \
   libva-utils \
   nvidia-vaapi-driver \
   radeontop \
