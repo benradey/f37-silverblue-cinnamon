@@ -62,6 +62,7 @@ RUN rpm-ostree override remove \
   firewall-config \
   imsettings-systemd \
   mesa-va-drivers-freeworld \
+  mesa-vdpau-drivers-freeworld \
   metacity \
   mpv \
   nemo-fileroller \
