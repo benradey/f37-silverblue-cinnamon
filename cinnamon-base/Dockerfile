@@ -9,7 +9,7 @@ RUN rpm-ostree override remove \
   evolution-data-server-langpacks \
   fprintd-pam \
   gdm \
-  geoclue2 \
+#  geoclue2 \
   gnome-bluetooth \
   gnome-browser-connector \
   gnome-classic-session \
@@ -45,9 +45,9 @@ RUN rpm-ostree override remove \
   rygel \
   systemd-oomd-defaults \
   tracker-miners tracker \
-  xdg-desktop-portal \
+#  xdg-desktop-portal \
   xdg-desktop-portal-gnome \
-  xdg-desktop-portal-gtk \
+#  xdg-desktop-portal-gtk \
   yelp \
 && rpm-ostree install \
   abrt-desktop \
