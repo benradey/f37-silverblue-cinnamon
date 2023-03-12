@@ -78,6 +78,7 @@ RUN rpm-ostree override remove \
   tmux-powerline \
   vim-powerline \
   xawtv \
+  xdotool \
   xfburn \
 && rm -rf /var \
 && ostree container commit
