@@ -61,7 +61,6 @@ RUN rpm-ostree override remove \
   firewall-config \
   imsettings-systemd \
   mesa-va-drivers-freeworld \
-  mesa-vdpau-drivers-freeworld \
   metacity \
   mpv \
   nemo-fileroller \
@@ -72,9 +71,11 @@ RUN rpm-ostree override remove \
   setroubleshoot \
   shotwell \
   simple-scan \
+  sshfs \
   system-config-printer \
   tmux \
   tmux-powerline \
+  vim \
   vim-powerline \
   xawtv \
   xdotool \
