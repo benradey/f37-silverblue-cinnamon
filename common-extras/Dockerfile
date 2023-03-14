@@ -19,6 +19,7 @@ RUN rpm-ostree override remove \
   mpv \
 && rpm-ostree install \
   cheese \
+  distrobox \
   ffmpeg \
   egl-utils \
   libva-utils \
