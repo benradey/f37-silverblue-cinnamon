@@ -11,8 +11,8 @@ env:
   BASE_IMAGE_DIR: "cinnamon-base"
   EXTRAS_IMAGE_NAME: "f37-common-extras"
   EXTRAS_IMAGE_DIR: "common-extras"
-  THINKPAD_IMAGE_NAME: "f37-lenovo-thinkpad"
-  THINKPAD_IMAGE_DIR: "lenovo-thinkpad"
+  IDEAPAD_IMAGE_NAME: "f37-lenovo-ideapad"
+  IDEAPAD_IMAGE_DIR: "lenovo-ideapad"
   LEGION_IMAGE_NAME: "f37-lenovo-legion"
   LEGION_IMAGE_DIR: "lenovo-legion"
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
@@ -74,7 +74,7 @@ jobs:
           extra-args: |
             --disable-content-trust
 
-  lenovo-thinkpad-build:
+  lenovo-ideapad-build:
     needs: common-extras-build
     runs-on: ubuntu-latest
     steps:
@@ -84,16 +84,16 @@ jobs:
       - name: Build container image
         uses: redhat-actions/buildah-build@v2
         with:
-          context: ${{ env.THINKPAD_IMAGE_DIR }}
-          containerfiles: ${{ env.THINKPAD_IMAGE_DIR }}/Dockerfile
-          image: ${{ env.THINKPAD_IMAGE_NAME }}
+          context: ${{ env.IDEAPAD_IMAGE_DIR }}
+          containerfiles: ${{ env.IDEAPAD_IMAGE_DIR }}/Dockerfile
+          image: ${{ env.IDEAPAD_IMAGE_NAME }}
           layers: false
           oci: true
 
       - name: Push to ghcr.io
         uses: redhat-actions/push-to-registry@v2.6
         with:
-          image: ${{ env.THINKPAD_IMAGE_NAME }}
+          image: ${{ env.IDEAPAD_IMAGE_NAME }}
           tags: "latest"
           registry: ${{ env.IMAGE_REGISTRY }}
           username: ${{ env.REGISTRY_USER }}
