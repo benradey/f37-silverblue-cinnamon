@@ -1,13 +1,9 @@
-FROM ghcr.io/benradey/f37-cinnamon-base:latest
+FROM ghcr.io/benradey/f37-common-extras:latest
 
 RUN rpm-ostree install \
   akmod-nvidia \
-  egl-utils \
-  libva-utils \
   nvidia-vaapi-driver \
   radeontop \
-  solaar \
-  vdpauinfo \
   xorg-x11-drv-nvidia \
   xorg-x11-drv-nvidia-cuda \
   xorg-x11-drv-nvidia-cuda-libs

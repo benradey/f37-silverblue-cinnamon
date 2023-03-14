@@ -1,14 +1,9 @@
 FROM ghcr.io/cgwalters/fedora-silverblue:37
 
-RUN rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-  https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
 RUN rpm-ostree override remove \
   evince-djvu \
   evolution-data-server \
   evolution-data-server-langpacks \
-  firefox \
-  firefox-langpacks \
   fprintd-pam \
   gdm \
   gnome-bluetooth \
@@ -39,28 +34,25 @@ RUN rpm-ostree override remove \
   gvfs-fuse \
   libproxy-duktape \
   libsane-hpaio \
-  mesa-va-drivers \
   mutter \
   nautilus \
   orca \
   rygel \
   systemd-oomd-defaults \
-  tracker-miners tracker \
+  tracker \
+  tracker-miners \
   xdg-desktop-portal-gnome \
   yelp \
 && rpm-ostree install \
   abrt-desktop \
   abrt-java-connector \
   blueman \
-  cheese \
   cinnamon \
   cinnamon-control-center \
   cinnamon-screensaver \
   eom \
-  ffmpeg \
   firewall-config \
   imsettings-systemd \
-  mesa-va-drivers-freeworld \
   metacity \
   mpv \
   nemo-fileroller \
@@ -71,11 +63,9 @@ RUN rpm-ostree override remove \
   setroubleshoot \
   shotwell \
   simple-scan \
-  sshfs \
   system-config-printer \
   tmux \
   tmux-powerline \
-  vim \
   vim-powerline \
   xawtv \
   xdotool \
