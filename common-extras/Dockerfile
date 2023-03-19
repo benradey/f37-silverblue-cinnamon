@@ -5,8 +5,8 @@ RUN rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-
 
 RUN rpm-ostree override remove \
   ffmpeg-free \
-  firefox \
-  firefox-langpacks \
+#  firefox \
+#  firefox-langpacks \
   libavcodec-free \
   libavdevice-free \
   libavfilter-free \
