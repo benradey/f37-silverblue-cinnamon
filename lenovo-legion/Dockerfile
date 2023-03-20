@@ -2,11 +2,14 @@ FROM ghcr.io/benradey/f37-common-extras:latest
 
 RUN rpm-ostree install \
   akmod-nvidia \
+  nvidia-settings \
   nvidia-vaapi-driver \
+  nvidia-xconfig \
   radeontop \
   xorg-x11-drv-nvidia \
   xorg-x11-drv-nvidia-cuda \
-  xorg-x11-drv-nvidia-cuda-libs
+  xorg-x11-drv-nvidia-cuda-libs \
+  xorg-x11-drv-nvidia-power
 
 
 
