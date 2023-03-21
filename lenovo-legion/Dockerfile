@@ -5,6 +5,7 @@ RUN rpm-ostree install \
   nvidia-settings \
   nvidia-vaapi-driver \
   nvidia-xconfig \
+  powertop \
   radeontop \
   xorg-x11-drv-nvidia \
   xorg-x11-drv-nvidia-cuda \
